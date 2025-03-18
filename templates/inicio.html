@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Servicios SIMAP{% endblock %}
+
+{% block content %}
+<div class="content-box">
+    <div class="image-container">
+        <img src="{{ url_for('static', filename='img/imagenPPAL.png') }}" alt="Asistente Virtual PAMI">
+    </div>
+    <div class="button-container">
+        <a href="/servicios-simap">Ingresar →</a>
+    </div>
+</div>
+{% endblock %}

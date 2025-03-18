@@ -1,0 +1,35 @@
+# Usar una imagen basada en Debian
+FROM python:3.11-slim
+
+WORKDIR /avs
+
+# Instalar dependencias del sistema
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    libopenblas-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+# Instalar PyTorch desde el índice oficial
+RUN pip install --no-cache-dir torch --index-url https://download.pytorch.org/whl/cpu
+
+# Instalar las dependencias de Python
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copiar la base de datos y todos los directorios dentro de /data
+
+COPY data /avs/data
+
+
+# Copiar el código fuente
+COPY . .
+
+# Configurar Flask
+ENV FLASK_APP=app.py
+ENV FLASK_RUN_HOST=0.0.0.0
+
+# Exponer el puerto
+EXPOSE 5000
+
+# Comando para ejecutar la aplicación
+CMD ["flask", "run", "--host=0.0.0.0"]

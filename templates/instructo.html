@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Instrucciones{% endblock %}
+
+{% block content %}
+    <h1>Instrucciones</h1>
+    <form method="POST">
+        <div style="display: flex; gap: 10px; margin-bottom: 15px;">
+            <div>
+                <label for="fecha_desde">Fecha Desde:</label>
+                <input type="date" id="fecha_desde" name="fecha_desde" value="2024-08-01" required>
+            </div>
+            <div>
+                <label for="fecha_hasta">Fecha Hasta:</label>
+                <input type="date" id="fecha_hasta" name="fecha_hasta" value="2024-12-31" required>
+            </div>
+            <div>
+                <label for="k">K:</label>
+                <input type="number" id="k" name="k" maxlength="3" min="1" max="999" required>
+            </div>
+        </div>
+        <label for="pregunta">Ingrese su pregunta:</label>
+        <input type="text" id="pregunta" name="pregunta" required>
+        <button type="submit">Enviar</button>
+    </form>
+    
+    {% if resultado %}
+        <h2>Respuesta:</h2>
+        <textarea rows="10" cols="50" readonly>{{ resultado }}</textarea>
+    {% endif %}
+{% endblock %}

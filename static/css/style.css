@@ -1,0 +1,197 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #0B2344; /* Aplica el color a todos los textos */
+}
+
+.header {
+    font-size: 20px; /* Ajusta el tamaño de la letra */
+    font-weight: bold; /* Aplica negrita */
+    width: 100%;
+    background-color: white;
+    padding: 5px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    color: #0B2344; /* Asegura que los textos en el header también tengan este color */
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.content-box {
+    background-color: white;
+    padding: 30px;
+    margin-top: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 850px; /* Ajusta el ancho si es necesario */
+    min-height: 400px; /* Ajusta la altura mínima */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; /* Asegura que los elementos dentro se distribuyan bien */
+}
+
+h1, h2, h3, h4, h5, h6, p, label, a {
+    color: #0B2344; /* Aplica el color a todos los textos del documento */
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.image-container img {
+    width: 870px; /* Ajusta el tamaño de la imagen según sea necesario */
+    height: auto;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.button-container a {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #0B2344;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.button-container a:hover {
+    background-color: #081A33;
+}
+
+/*-------------------*/
+main {
+    display: flex;
+    justify-content: center; /* Centra el contenido */
+    align-items: center;
+    width: 100%; /* Asegura que ocupe todo el ancho disponible */
+}
+
+.content-box_A {
+    background-color: white;
+    padding: 30px;
+    margin-top: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 90vw !important; /* Ocupará el 90% de la pantalla */
+    max-width: 1100px !important; /* Ajusta el ancho máximo */
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Alinea los elementos arriba */
+    gap: 15px; /* Espaciado entre elementos */
+}
+
+/* Alinea los elementos dentro del formulario */
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form label {
+    font-weight: bold;
+    margin-top: 10px;
+    color: #0B2344; /* Aplica el color a los labels del formulario */
+}
+
+form input, form select, form textarea {
+    width: 90%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    color: #0B2344; /* Aplica el color al texto dentro de los inputs */
+}
+
+/* Botón de envío mejorado */
+form button {
+    padding: 10px 20px;
+    margin-top: 15px;
+    background-color: #0B2344;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #081A33;
+}
+
+/* Ajusta el área de respuesta */
+h2 {
+    margin-top: 5px; /* Reduce el espacio superior */
+    font-size: 18px; /* Ajusta el tamaño del texto */
+    font-weight: bold;
+    color: #0B2344;
+}
+
+input {
+    font-size: 18px; /* Tamaño de la letra del input */
+    font-family: 'Arial', sans-serif; /* Tipo de letra */
+    color: #0B2344;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    max-width: 800px;
+}
+textarea {
+    width: 100%;
+    max-width: 800px; /* Ajusta el ancho máximo del textarea */
+    height: 500px; /* Aumenta la altura */
+    font-size: 18px; /* Ajusta el tamaño del texto dentro del textarea */
+    font-family: Arial, sans-serif; /* Cambia la fuente */
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    resize: vertical; /* Permite redimensionar solo en altura */
+    color: #050f1d;
+}
+
+.input-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espaciado entre input y botón */
+    width: 100%;
+    max-width: 800px; /* Aumenta el ancho del conjunto */
+}
+.header-title {
+    margin-left: -35px !important;
+    font-weight: bold;
+    font-size: 20px;
+}

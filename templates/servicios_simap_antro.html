@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Servicios SIMAP{% endblock %}
+
+{% block content %}
+    <h1 style="font-size: 20px; margin-top: -15px;">Consulta de Servicios SIMAP ANTROPHIC</h1>
+    <form method="POST">
+        <label for="tipo_respuesta">Elija el tipo de respuesta:</label>
+        <select id="tipo_respuesta" name="tipo_respuesta" required>
+            <option value="conciso">Conciso</option>
+            <option value="amplio">Amplio</option>
+            <option value="educativo">Educativo</option>
+        </select>
+        <div style="display: flex; gap: 10px; margin-bottom: 15px;">
+        </div>
+        <label for="pregunta">Ingrese su pregunta:</label>
+        <input type="text" id="pregunta" name="pregunta" value="{{ pregunta }}" required>
+        
+        <!-- Lista desplegable para elegir el tipo de respuesta -->
+       
+        
+        <button type="submit">Enviar</button>
+    </form>
+    
+    {% if resultado %}
+        <h2>Respuesta:</h2>
+        <textarea rows="10" cols="50" readonly>{{ resultado }}</textarea>
+    {% endif %}
+{% endblock %}

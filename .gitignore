@@ -1,0 +1,24 @@
+# Ignorar archivos y carpetas de Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignorar entornos virtuales
+venv/
+.env
+p111/  # Asegura que el entorno virtual p111 no se suba
+
+# Ignorar archivos de logs
+*.log
+
+# Ignorar archivos del sistema
+.DS_Store
+
+# Ignorar archivos específicos del proyecto
+config.ini
+asis-virtual-simap*
+data/
+
+# Ignorar configuraciones de Docker (si aplican)
+docker-compose.override.yml
