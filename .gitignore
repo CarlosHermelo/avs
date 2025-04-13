@@ -22,3 +22,4 @@ data/
 
 # Ignorar configuraciones de Docker (si aplican)
 docker-compose.override.yml
+config.ini 
