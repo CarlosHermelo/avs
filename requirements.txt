@@ -21,5 +21,6 @@ rank-bm25==0.2.2
 semchunk==2.2.2
 sentence-transformers==3.4.1
 streamlit==1.40.2
+tiktoken==0.6.0
 watchfiles==0.24.0
 websockets==13.1

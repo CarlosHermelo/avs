@@ -16,7 +16,7 @@ p111/  # Asegura que el entorno virtual p111 no se suba
 .DS_Store
 
 # Ignorar archivos específicos del proyecto
-config.ini
+
 asis-virtual-simap*
 data/
 

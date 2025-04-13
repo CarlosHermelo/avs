@@ -1,26 +1,13 @@
-FROM python:3.9-slim
-WORKDIR /app
-# Instalar dependencias del sistema necesarias para compilar extensiones nativas
-RUN apt-get update && apt-get install -y \
-    build-essential \
-    cmake \
-    g++ \
-    wget \
-    git \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
-# Crear directorios para templates y archivos estáticos
-#RUN mkdir -p /app/templates /app/static/css /app/flask_session
-# Actualizar pip
-RUN pip install --no-cache-dir --upgrade pip
-# Instalar dependencias de Python
+# Etapa 1: Construcción
+FROM python:3.11-alpine as builder
+WORKDIR /avs
+RUN apk add --no-cache gcc musl-dev python3-dev
 COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
-RUN pip install flask gunicorn flask-session
-# Copiar el código fuente
+RUN pip install --no-cache-dir --prefix=/install -r requirements.txt
+
+# Etapa 2: Imagen final
+FROM python:3.11-alpine
+WORKDIR /avs
+COPY --from=builder /install /usr/local
 COPY . .
-# Asegurarse de que los directorios existan
-#RUN mkdir -p /app/templates /app/static/css /app/flask_session
-EXPOSE 5000
-# Usar Flask directamente para desarrollo en lugar de gunicorn
-CMD ["python", "app.py"]
+CMD ["flask", "run", "--host=0.0.0.0"]
